@@ -8,9 +8,7 @@ session_start();
 $categories = get_categories( $conn );
 $current_user = get_user( $conn, $_SESSION);
 $accounts = get_accounts( $conn, $current_user['user_id']);
-echo '<pre>';
-//var_dump(get_account_balance($conn, 1));
-echo '</pre>';
+
 ?>
 
 <h1>Add Transaction</h1>

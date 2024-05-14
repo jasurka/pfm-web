@@ -17,5 +17,5 @@ if ( isset( $_POST['transaction_amount'] ) && isset( $_POST['transaction_date'] 
 		$current_account_balance['balance'] += $_POST['transaction_amount'];
 		update_account_balance( $conn, $_POST['transaction_account'], $current_account_balance['balance'] );
 	}
-	header( "Location: /" );
+	header( "Location: /dashboard/" );
 }

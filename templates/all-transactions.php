@@ -7,11 +7,10 @@ session_start();
 $categories       = get_categories( $conn );
 $current_user     = get_user( $conn, $_SESSION );
 $all_transactions = get_all_transactions( $conn, $current_user['user_id'] );
-echo '<pre>';
-//var_dump( $all_transactions );
-echo '</pre>';
+
 ?>
 <div class="transactions-wrapper">
+	<h2 class="transactions-title">All transactions</h2>
 	<?php
 	foreach ( $all_transactions as $transaction ) {
 		?>
