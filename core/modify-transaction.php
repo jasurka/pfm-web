@@ -25,7 +25,20 @@ $current_user = get_user( $conn, $_SESSION);
 $accounts = get_accounts( $conn, $current_user['user_id']);
 
 ?>
-<form method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Finance Manager - Accounts</title>
+	<link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+<?php
+require_once '../templates/header.php';
+?>
+<div class="container">
+<form method="post" class="modify-form">
 	<div class="input-wrapper">
 		<label for="new_transaction_amount">Amount:</label>
 		<input type="number" id="new_transaction_amount" name="new_transaction_amount" required value="<?php echo $transaction_data['amount']; ?>">
@@ -48,7 +61,7 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 			<?php
 			foreach ( $accounts as $account ) {
 				?>
-				<option value="<?php echo $account->get_id(); ?>"><?php echo $account->get_name(); ?></option>
+				<option value="<?php echo $account['account_id']; ?>"><?php echo $account['name']; ?></option>
 				<?php
 			}
 			?>
@@ -71,6 +84,9 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 	<div class="hidden-input">
 		<input type="hidden" name="transaction_user" id="transaction_user" value="<?php echo $current_user['user_id']; ?>">
 	</div>
-	<input type="submit" class="submit" name="transaction_update" value="Modify">
+	<input type="submit" class="submit primary-button" name="transaction_update" value="Modify">
 </form>
-<a href="../dashboard/" class="archive">Return to dashboard</a>
+<a href="/dashboard/" class="return-to-dash">Return to dashboard</a>
+</div>
+</body>
+</html>

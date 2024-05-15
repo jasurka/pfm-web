@@ -25,8 +25,8 @@ $all_accounts = get_all_accounts( $conn, $current_user['user_id'] );
 require_once '../../templates/header.php';
 ?>
 <div class="container">
-	<div class="accounts-wrapper">
-		<div class="accounts-top">
+	<div class="accounts-wrapper archive">
+		<div class="wrapper-top">
 			<h2 class="accounts-title">Accounts</h2>
 		</div>
 		<div class="accounts-grid">
@@ -39,15 +39,15 @@ require_once '../../templates/header.php';
 						<div class="account-name">Name: <span class="item-info"><?php echo $account['name']; ?></span></div>
 						<div class="account-balance">Balance: <span class="item-info"><?php echo $account['balance']; ?> <span class="unit">RMB</span></span></div>
 						<div class="buttons">
-							<a class="modify-item" href="../core/modify-account.php/?account_id=<?php echo $account['account_id']; ?>">Modify</a>
-							<a class="delete-item" href="../core/delete-account.php/?account_id=<?php echo $account['account_id']; ?>">Delete</a>
+							<a class="modify-item" href="../../core/modify-account.php/?account_id=<?php echo $account['account_id']; ?>">Modify</a>
+							<a class="delete-item" href="../../core/delete-account.php/?account_id=<?php echo $account['account_id']; ?>">Delete</a>
 						</div>
 					</div>
 				</div>
 				<?php
 			}
 			?>
-			<div class="add-new primary-button">Add new account</div>
+			<div class="add-new primary-button">Add new Account</div>
 		</div>
 	</div>
 </div>

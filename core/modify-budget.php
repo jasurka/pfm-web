@@ -20,9 +20,21 @@ $categories = get_categories( $conn );
 $current_user = get_user( $conn, $_SESSION);
 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Finance Manager - Accounts</title>
+	<link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+<?php
+require_once '../templates/header.php';
+?>
+<div class="container">
 <h1>Modify Budget</h1>
-<form method="post">
+<form method="post" class="modify-form">
 	<div class="input-wrapper">
 		<label for="new_budget_category">Category:</label>
 		<select name="new_budget_category" id="new_budget_category">
@@ -50,6 +62,9 @@ $current_user = get_user( $conn, $_SESSION);
 	<div class="hidden-input">
 		<input type="hidden" name="budget_user" id="budget_user" value="<?php echo $current_user['user_id']; ?>">
 	</div>
-	<input type="submit" class="submit" name="budget_update" value="Modify">
+	<input type="submit" class="submit primary-button" name="budget_update" value="Modify">
 </form>
-<a href="../dashboard/" class="archive">Return to dashboard</a>
+	<a href="/dashboard/" class="return-to-dash">Return to dashboard</a>
+</div>
+</body>
+</html>

@@ -21,7 +21,7 @@ $all_budgets = array_slice( $all_budgets, 0, 4 );
 		<div class="budget-item">
 			<div class="budget-item-wrapper">
 				<div class="budget-category">Category: <span class="item-info"><?php echo get_category_by_id( $conn, $budget['category_id'] )['name']; ?></span></div>
-				<div class="budget-amount">Amount: <span class="item-info"><?php echo $budget['amount']; ?></span></div>
+				<div class="budget-amount">Amount: <span class="item-info"><?php echo $budget['amount'] > 0 ? $budget['amount'] . ' <span class="unit">RMB</span>': '0 <span class="unit">RMB</span> <span class="limit">Limit exceeded</span>'; ?> </span></div>
 				<div class="budget-start">Start: <span class="item-info"><?php echo $budget['start_date']; ?></span></div>
 				<div class="budget-end">End: <span class="item-info"><?php echo $budget['end_date']; ?></span></div>
 				<div class="buttons">

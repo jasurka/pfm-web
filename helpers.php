@@ -128,6 +128,25 @@ function get_all_budgets( $conn, $user_id ) {
 
 	return $budgets;
 }
+function get_budget_amount( $conn, $category_id ) {
+	$sql  = "SELECT * FROM Budgets WHERE category_id=?";
+	$stmt = $conn->prepare( $sql );
+	$stmt->bind_param( 'i', $category_id );
+	$stmt->execute();
+	$result   = $stmt->get_result();
+	$account = $result->fetch_assoc();
+
+	$stmt->close();
+
+	return $account;
+}
+function update_budget_amount( $conn, $category_id, $new_value ) {
+	$sql  = "UPDATE Budgets SET amount=?  WHERE category_id=?";
+	$stmt = $conn->prepare( $sql );
+	$stmt->bind_param( 'ii', $new_value, $category_id );
+	$result = $stmt->execute();
+	$stmt->close();
+}
 function get_all_accounts( $conn, $user_id ) {
 	$sql  = "SELECT * FROM Accounts WHERE user_id='$user_id'";
 	$stmt = $conn->prepare( $sql );

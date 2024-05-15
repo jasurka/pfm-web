@@ -34,7 +34,15 @@ require_once '../../templates/header.php';
 				<?php
 				foreach ( $categories as $category ) {
 					?>
-					<li class="category-item"><?php echo $category['name']; ?></li>
+					<div class="category-item">
+						<div class="category-name">
+							<?php echo $category['name']; ?>
+						</div>
+						<div class="buttons">
+							<a class="modify-item" href="../../core/modify-category.php/?category_id=<?php echo $category['category_id']; ?>">Modify</a>
+							<a class="delete-item" href="../../core/delete-category.php/?category_id=<?php echo $category['category_id']; ?>">Delete</a>
+						</div>
+					</div>
 					<?php
 				}
 				?>

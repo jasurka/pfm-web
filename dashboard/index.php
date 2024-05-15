@@ -29,9 +29,6 @@ require_once '../templates/header.php';
 	</div>
 	<?php
 	require_once '../templates/all-transactions.php';
-
-
-	require_once '../templates/add-budget.php';
 	?>
 </div>
 

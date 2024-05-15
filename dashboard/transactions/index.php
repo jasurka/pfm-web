@@ -42,14 +42,14 @@ require_once '../../templates/header.php';
 						<div class="transaction-date"><?php echo $transaction['date']; ?></div>
 					</div>
 					<div class="buttons">
-						<a class="modify-item" href="../core/modify-transaction.php/?transaction_id=<?php echo $transaction['transaction_id']; ?>">Modify</a>
-						<a class="delete-item" href="../core/delete-transaction.php/?transaction_id=<?php echo $transaction['transaction_id']; ?>">Delete</a>
+						<a class="modify-item" href="../../core/modify-transaction.php/?transaction_id=<?php echo $transaction['transaction_id']; ?>">Modify</a>
+						<a class="delete-item" href="../../core/delete-transaction.php/?transaction_id=<?php echo $transaction['transaction_id']; ?>">Delete</a>
 					</div>
 				</div>
 				<?php
 			}
 			?>
-			<div class="add-new primary-button">Add new transaction</div>
+			<div class="add-new primary-button">Add new Transaction</div>
 		</div>
 	</div>
 </div>
