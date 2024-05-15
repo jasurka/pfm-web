@@ -53,8 +53,7 @@ function get_accounts( $conn, $user_id ) {
 	$accounts = array();
 
 	while ( $account_data = $result->fetch_assoc() ) {
-		$account    = new Account( $account_data['account_id'], $account_data['user_id'], $account_data['account_type'], $account_data['name'], $account_data['balance'] );
-		$accounts[] = $account;
+		$accounts[] = $account_data;
 	}
 
 	$stmt->close();

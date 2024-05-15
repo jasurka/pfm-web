@@ -1,7 +1,7 @@
 <?php
-require_once '../core/db_connect.php';
-require_once '../classes/class-account.php';
-require_once '../helpers.php';
+//require_once '../core/db_connect.php';
+//require_once '../classes/class-account.php';
+//require_once '../helpers.php';
 $conn = OpenCon();
 session_start();
 
@@ -12,7 +12,7 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 ?>
 
 <h1>Add Transaction</h1>
-<form action="../core/transaction.php" method="post">
+<form action="../../core/transaction.php" method="post" class="transaction-form">
 	<div class="input-wrapper">
 		<label for="transaction_amount">Amount:</label>
 		<input type="number" id="transaction_amount" name="transaction_amount" required>
@@ -35,7 +35,7 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 			<?php
 			foreach ( $accounts as $account ) {
 				?>
-				<option value="<?php echo $account->get_id(); ?>"><?php echo $account->get_name(); ?></option>
+				<option value="<?php echo $account['account_id']; ?>"><?php echo $account['name']; ?></option>
 				<?php
 			}
 			?>
@@ -59,5 +59,5 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 	<div class="hidden-input">
 		<input type="hidden" name="transaction_user" id="transaction_user" value="<?php echo $current_user['user_id']; ?>">
 	</div>
-	<button type="submit">Add Transaction</button>
+	<button type="submit" class="primary-button">Add Transaction</button>
 </form>

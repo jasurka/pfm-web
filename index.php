@@ -2,7 +2,7 @@
 session_start();
 
 if ( isset( $_SESSION['logged_in'] ) && true === $_SESSION['logged_in'] ) {
-	header( "Location: /dashboard" );
+	header( "Location: /dashboard/" );
 }
 ?>
 <!DOCTYPE html>
@@ -25,9 +25,9 @@ if ( isset( $_SESSION['logged_in'] ) && true === $_SESSION['logged_in'] ) {
 				<input type="text" id="username" name="username" required>
 				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" required>
-				<button type="submit">Login</button>
+				<button type="submit" class="primary-button">Login</button>
 				<h2>Do not have account?</h2>
-				<button onclick="openForm('register')">Register</button>
+				<button onclick="openForm('register')" class="primary-button">Register</button>
 				<?php
 				if ( isset( $_GET['register'] ) && 'success' === $_GET['register'] ) {
 					?>
@@ -46,9 +46,9 @@ if ( isset( $_SESSION['logged_in'] ) && true === $_SESSION['logged_in'] ) {
 				<input type="email" id="reg_email" name="reg_email" required>
 				<label for="reg_password">Password:</label>
 				<input type="password" id="reg_password" name="reg_password" required>
-				<button type="submit">Register</button>
+				<button type="submit" class="primary-button">Register</button>
 				<h2>Already have account?</h2>
-				<button class="active" onclick="openForm('login')">Login</button>
+				<button class="active primary-button" onclick="openForm('login')">Login</button>
 			</form>
 			<?php
 			// Display error message (if any)
