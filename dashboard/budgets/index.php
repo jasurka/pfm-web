@@ -55,7 +55,7 @@ require_once '../../templates/header.php';
 <div class="overlay">
 	<div class="inner">
 		<?php
-		require_once '../../templates/add-account.php';
+		require_once '../../templates/add-budget.php';
 		?>
 		<div class="close-button">x</div>
 	</div>

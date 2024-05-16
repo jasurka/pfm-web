@@ -1,17 +1,14 @@
 <?php
-require_once '../core/db_connect.php';
-require_once '../helpers.php';
 $conn = OpenCon();
 session_start();
 
 $categories = get_categories( $conn );
 $current_user = get_user( $conn, $_SESSION);
-$accounts = get_accounts( $conn, $current_user['user_id']);
 
 ?>
 
 <h1>Add Budget</h1>
-<form action="../core/budget.php" method="post">
+<form action="../../core/budget.php" method="post">
 	<div class="input-wrapper">
 		<label for="budget_category">Category:</label>
 		<select name="budget_category" id="budget_category">
@@ -39,5 +36,5 @@ $accounts = get_accounts( $conn, $current_user['user_id']);
 	<div class="hidden-input">
 		<input type="hidden" name="budget_user" id="budget_user" value="<?php echo $current_user['user_id']; ?>">
 	</div>
-	<button type="submit">Add Budget</button>
+	<button type="submit" class="primary-button">Add Budget</button>
 </form>

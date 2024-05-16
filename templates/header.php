@@ -15,6 +15,7 @@ $current_user     = get_user( $conn, $_SESSION );
 					<li class="menu-item"><a href="/dashboard/budgets/" class="menu-link">Budgets</a></li>
 					<li class="menu-item"><a href="/dashboard/categories/" class="menu-link">Categories</a></li>
 					<li class="menu-item"><a href="/dashboard/accounts/" class="menu-link">Accounts</a></li>
+					<li class="menu-item"><a href="/dashboard/reports/" class="menu-link">Reports</a></li>
 				</ul>
 			</div>
 			<div class="user">

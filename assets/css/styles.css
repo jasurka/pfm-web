@@ -13,7 +13,13 @@ body {
     padding: 0;
     background-color: #F5F6FA;
 }
-
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98vw;
+    height: 90vh;
+}
 .container {
     width: 1280px;
     margin: 0 auto;
@@ -292,4 +298,10 @@ a.delete-item {
 }
 .unit {
     font-size: 10px;
+}
+.charts-wrapper {
+    display: flex;
+}
+.chart-item {
+    width: 48%;
 }
